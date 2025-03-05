@@ -58,7 +58,7 @@
           </div>
           <div class="mb-3 password-wrapper">
             <label for="password" class="form-label">Confirm Password</label>
-            <input [type]="showConfirmPassword ? 'text' : 'password'"  class="form-control" formControlName="confirmPassword" id="password" placeholder="confirmPassword" >
+            <input [type]="showConfirmPassword ? 'text' : 'password'"  class="form-control" formControlName="confirmPassword" id="confirmPassword" placeholder="confirmPassword" >
             <button type="button" class="btn btn-outline-secondary" (click)="togglePassword('confirmPassword')">
               <img *ngIf="showConfirmPassword" src="assets/img/eye.svg" class="toggle-password" width="20">
               <img *ngIf="!showConfirmPassword" src="assets/img/hide.png" class="toggle-password" width="20">
