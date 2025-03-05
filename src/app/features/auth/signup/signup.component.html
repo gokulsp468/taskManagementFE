@@ -30,7 +30,7 @@
 
           <div class="mb-4">
              <label for="email" class="form-label">Email Address</label>
-             <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email" required>
+             <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email" >
              <small class="text-danger small m-0" *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.touched">
               * Email is required
             </small>
@@ -41,8 +41,11 @@
 
           <div class="mb-4 password-wrapper">
              <label for="password" class="form-label">Enter A Password</label>
-             <input type="password" formControlName="password" class="form-control" id="password" placeholder="password" required>
-             <img src="../../../../assets/img/eye.svg" class="toggle-password" width="20" >
+             <input [type]="showPassword ? 'text' : 'password'"  formControlName="password" class="form-control" id="password" placeholder="password" >
+             <button type="button" class="btn btn-outline-secondary" (click)="togglePassword('password')">
+              <img *ngIf="showPassword" src="assets/img/eye.svg" class="toggle-password" width="20">
+              <img *ngIf="!showPassword" src="assets/img/hide.png" class="toggle-password" width="20">
+            </button>
              <small class="text-danger small m-0" *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched">
               * Password is required
             </small>
@@ -55,13 +58,21 @@
           </div>
           <div class="mb-3 password-wrapper">
             <label for="password" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" formControlName="confirmPassword" id="password" placeholder="confirmPassword" required>
-            <img src="../../../../assets/img/eye.svg" class="toggle-password" width="20" >
+            <input [type]="showConfirmPassword ? 'text' : 'password'"  class="form-control" formControlName="confirmPassword" id="password" placeholder="confirmPassword" >
+            <button type="button" class="btn btn-outline-secondary" (click)="togglePassword('confirmPassword')">
+              <img *ngIf="showConfirmPassword" src="assets/img/eye.svg" class="toggle-password" width="20">
+              <img *ngIf="!showConfirmPassword" src="assets/img/hide.png" class="toggle-password" width="20">
+            </button>
             <small class="text-danger small m-0" *ngIf="registerForm.errors?.['passwordsMismatch'] && registerForm.touched">
               * Passwords do not match
             </small>
          </div>
-          <button type="submit" class="btn btn-primary w-100">Create Account</button>
+         <button type="submit" class="btn btn-primary w-100 " [disabled]="loading">
+          <span *ngIf="loading" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+          {{ loading ? 'Loading...' : 'Create Account' }}
+        </button>
+
+
       </form>
       <div class="signup-action-footer text-center mt-3">
         <p class="login-txt">Already have an account?
@@ -72,3 +83,5 @@
   </div>
   </div>
 </div>
+
+

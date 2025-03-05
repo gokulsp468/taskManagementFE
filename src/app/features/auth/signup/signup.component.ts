@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { confirmPasswordValidator } from '../../../shared/validators/common_validators';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from '../../../core/services/auth.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-signup',
-  imports: [CommonModule, ReactiveFormsModule,RouterModule],
+  imports: [CommonModule, ReactiveFormsModule,RouterModule,NgxSpinnerModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })
@@ -16,8 +18,14 @@ export class SignupComponent {
   showPassword = false;
   showConfirmPassword = false;
   registerForm: FormGroup;
+  loading:boolean = false;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private spinner: NgxSpinnerService,
+    private toaster: MessageService
+    ) {
     this.registerForm = this.fb.group({
       first_name: ['', [Validators.required, Validators.minLength(2)]],
       last_name: ['', [Validators.required, Validators.minLength(2)]],
@@ -32,23 +40,39 @@ export class SignupComponent {
   }
 
   onSubmit() {
+    this.loading = true;
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
+      this.loading = false;
       return;
     }
 
     const { confirmPassword, ...payload } = this.registerForm.value;
     console.log('Registering user:', payload);
+
     this.authService.register(payload).subscribe({
       next: (response) => {
         if(response.success){
+          this.loading = false;
+          this.toaster.add({ severity: 'success', summary: 'Success', detail: response.message });
           console.log('Login successful:', response);
         }
       },
       error: (error) => {
+        this.loading = false;
+        this.toaster.add({ severity: 'error', summary: 'Error', detail: error.error.message });
         console.error('Login failed:', error);
       }
     });
+  }
+
+
+  togglePassword(field: string) {
+    if (field === 'password') {
+      this.showPassword = !this.showPassword;
+    } else if (field === 'confirmPassword') {
+      this.showConfirmPassword = !this.showConfirmPassword;
+    }
   }
 
   }
