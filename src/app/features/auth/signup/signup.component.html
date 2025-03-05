@@ -1,1 +1,35 @@
-<p>signup works!</p>
+<div class="login-container">
+  <div class="row login-box bg-white">
+      <div class="col-md-5 p-2">
+          <div class="login-image">
+              <h2>Take your productivity to the next level.</h2>
+              <p class="copyright">Copyright 2021 | All Rights Reserved</p>
+          </div>
+      </div>
+      <div class="col-md-7 d-flex flex-column justify-content-center">
+      <div class="content">
+          <h2>Create an<span> Account</span></h2>
+          <p>It's Simple and Easy!!</p>
+      <form action="/action_page.php" method="post">
+          <div class="mb-4">
+             <label for="fullname" class="form-label">Full Name</label>
+             <input type="text" class="form-control" id="fullname" placeholder="Enter your full name" required>
+             <small>Information about the input</small>
+          </div>
+          <div class="mb-4">
+             <label for="email" class="form-label">Email Address</label>
+             <input type="email" class="form-control" id="email" placeholder="Email" required>
+             <small>Example. manogmail.com</small>
+          </div>
+          <div class="mb-4 password-wrapper">
+             <label for="password" class="form-label">Enter A Password</label>
+             <input type="password" class="form-control" id="password" placeholder="••••••" required>
+             <img src="../../../../assets/img/eye.svg" class="toggle-password" width="20" >
+             <small>Upto 8 characters with an Uppercase, symbol and number</small>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Create Account</button>
+      </form>
+      </div>
+  </div>
+  </div>
+</div>
