@@ -89,5 +89,3 @@ src/
 
 ---
 
-Now, your **Angular 19 project is fully structured** and ready to build features! 🚀  
-Would you like me to guide you on **API integration for signup** next?
