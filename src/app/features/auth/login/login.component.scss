@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Poppins", serif;
+    font-optical-sizing: auto;
+  }
+  img {
+    max-width: 100%;
+  }
+  .login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  .login-box {
+    width: 100%;
+    min-height: 95vh;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .login-image {
+    background-image: url(../../../../assets/img/img-1.png);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 90%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 32px;
+  }
+  .login-image h2 {
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 66px;
+    padding: 70px;
+  }
+  .login-image p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 66px;
+  }
+  .content {
+    width: 385px;
+    margin: auto;
+  }
+  
+  .content h2 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    margin-bottom: 0;
+  }
+  .content span {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+  }
+  .content p {
+    font-size: 16px;
+    color: #62667E;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 2rem;
+  }
+  
+  .form-label {
+    color: #2C2E3A;
+  }
+  
+  .form-control {
+    border-radius: 12px;
+    border-color: #2746D8;
+    padding: 10px;
+  }
+  
+  .content small {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #6E7391;
+  }
+  
+  .password-wrapper {
+    position: relative;
+  }
+  .password-wrapper .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 45%;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background-color: #3754DB;
+    border: none;
+    padding-top: 15px;
+    padding-right: 60px;
+    padding-bottom: 15px;
+    padding-left: 60px;
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0b30d1;
+  }
+  
+  @media (max-width: 1679px) {
+  
+    .login-image h2 {
+        font-weight: 500;
+        font-size: 45px;
+        line-height: 66px;
+        padding: 80px;
+    }
+    .login-image p {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 66px;
+    }
+  
+  }
+  
+  @media (max-width: 1400px) {
+  
+    .login-image h2 {
+        font-size: 40px;
+        padding: 50px;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+  
+    .content h2, .content span {
+        font-size: 30px;
+        line-height: 30px;
+    }
+  
+    .login-image h2 {
+        padding: 65px;
+        font-size: 34px;
+    }
+  
+    .login-image {
+        width: 100%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+  
+    .login-image h2 {
+        padding: 30px;
+        font-size: 30px;
+        line-height: 50px;
+    }
+    .login-image p {
+        font-size: 14px;
+    }
+    .content h2, .content span {
+        font-size: 28px;
+        line-height: 38px;
+    }
+  
+    .password-wrapper .toggle-password {
+        position: absolute;
+        right: 10px;
+        top: 37%;
+        cursor: pointer;
+    }
+  }
+  
+  @media (max-width: 769px) {
+  
+    .login-image h2 {
+        padding: 30px;
+        font-size: 36px;
+        line-height: 46px;
+    }
+    .content {
+        width: 100%;
+        margin: auto;
+        padding-inline: 20px;
+    }
+    .btn-primary {
+        padding: 12px 40px;
+    }
+  
+  }
+  
+  @media (max-width: 579px) {
+    .login-image h2 {
+        padding: 20px;
+        font-size: 32px;
+        line-height: 42px;
+    }
+    .content h2, .content span {
+        font-size: 24px;
+        line-height: 34px;
+    }
+    .form-control {
+        padding: 8px;
+    }
+  
+  }
+  
+  @media (max-width: 479px) {
+    .login-image {
+        min-height: 250px;
+        text-align: center;
+    }
+    .login-image h2 {
+        font-size: 28px;
+        line-height: 38px;
+        padding: 15px;
+    }
+  
+    .content p {
+        font-size: 14px;
+        margin-bottom: 1.5rem;
+    }
+    .btn-primary {
+        padding: 10px 30px;
+    }
+  }
+  
+.no-underline {
+    text-decoration: none;  /* Removes underline */
+    cursor: pointer;        /* Changes cursor to pointer */
+}
+.no-underline:hover {
+    text-decoration: none;  /* Ensures no underline on hover */
+}
