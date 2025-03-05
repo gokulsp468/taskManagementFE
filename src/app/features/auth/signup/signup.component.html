@@ -10,25 +10,64 @@
       <div class="content">
           <h2>Create an<span> Account</span></h2>
           <p>It's Simple and Easy!!</p>
-      <form action="/action_page.php" method="post">
-          <div class="mb-4">
-             <label for="fullname" class="form-label">Full Name</label>
-             <input type="text" class="form-control" id="fullname" placeholder="Enter your full name" required>
-             <small>Information about the input</small>
+      <form [formGroup]="registerForm" method="post" (ngSubmit)="onSubmit()">
+        <div class="row mb-4 namerow">
+          <div class="col-md-6 me-1">
+            <label for="firstname" class="form-label">First Name</label>
+            <input type="text" formControlName="first_name" class="form-control" id="firstname" placeholder="First Name">
+              <small class="text-danger small m-0" *ngIf="registerForm.get('first_name')?.invalid && registerForm.get('first_name')?.touched">
+                * Name is required
+              </small>
           </div>
+          <div class="col-md-6">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="text" formControlName="last_name" class="form-control" id="lastname" placeholder="Last Name" >
+            <small class="text-danger small m-0" *ngIf="registerForm.get('last_name')?.invalid && registerForm.get('last_name')?.touched">
+              * Last Name is required
+            </small>
+          </div>
+        </div>
+
           <div class="mb-4">
              <label for="email" class="form-label">Email Address</label>
-             <input type="email" class="form-control" id="email" placeholder="Email" required>
-             <small>Example. manogmail.com</small>
+             <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email" required>
+             <small class="text-danger small m-0" *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.touched">
+              * Email is required
+            </small>
+            <small class="text-danger small m-0" *ngIf="registerForm.get('email')?.errors?.['email'] && registerForm.get('email')?.touched">
+              * Enter a valid email address
+            </small>
           </div>
+
           <div class="mb-4 password-wrapper">
              <label for="password" class="form-label">Enter A Password</label>
-             <input type="password" class="form-control" id="password" placeholder="••••••" required>
+             <input type="password" formControlName="password" class="form-control" id="password" placeholder="password" required>
              <img src="../../../../assets/img/eye.svg" class="toggle-password" width="20" >
-             <small>Upto 8 characters with an Uppercase, symbol and number</small>
+             <small class="text-danger small m-0" *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched">
+              * Password is required
+            </small>
+            <small class="text-danger small m-0" *ngIf="registerForm.get('password')?.errors?.['minlength'] && registerForm.get('password')?.touched">
+              * Password must be at least 8 characters long
+            </small>
+            <small class="text-danger small m-0" *ngIf="registerForm.get('password')?.errors?.['pattern'] && registerForm.get('password')?.touched">
+              * Password must contain an uppercase letter, a number, and a special character
+            </small>
           </div>
+          <div class="mb-3 password-wrapper">
+            <label for="password" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" formControlName="confirmPassword" id="password" placeholder="confirmPassword" required>
+            <img src="../../../../assets/img/eye.svg" class="toggle-password" width="20" >
+            <small class="text-danger small m-0" *ngIf="registerForm.errors?.['passwordsMismatch'] && registerForm.touched">
+              * Passwords do not match
+            </small>
+         </div>
           <button type="submit" class="btn btn-primary w-100">Create Account</button>
       </form>
+      <div class="signup-action-footer text-center mt-3">
+        <p class="login-txt">Already have an account?
+            <a [routerLink]="['/auth/login']" class="links links-primary no-underline">LogIn</a>
+        </p>
+    </div>
       </div>
   </div>
   </div>
