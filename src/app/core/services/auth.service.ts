@@ -11,6 +11,22 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  isSessionActive(): string | null {
+    const token = localStorage.getItem('accesstoken');
+    
+    if (token) {
+      return token;
+    }
+    
+    return null;
+  }
+
+  logout(): void {
+    localStorage.removeItem('accesstoken');
+    localStorage.removeItem('refreshToken');
+    // localStorage.removeItem('rememberMe');
+  }
+
   register(userData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/auth/register/`, userData);
   }

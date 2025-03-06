@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 import { CommonModule } from '@angular/common';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +16,14 @@ export class LoginComponent {
   showPassword = false;
   showConfirmPassword = false;
   loginForm: FormGroup;
-  
-    constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+  loading:boolean = false;
+
+    constructor(
+      private fb: FormBuilder, 
+      private authService: AuthService, 
+      private router: Router, 
+      private toaster: MessageService
+    ) {
       this.loginForm = this.fb.group({
         email: ['', [Validators.required, Validators.email]],
         password: ['', [
@@ -27,8 +34,10 @@ export class LoginComponent {
     }
   
     onSubmit() {
+      this.loading = true;
       if (this.loginForm.invalid) {
         this.loginForm.markAllAsTouched();
+        this.loading = false;
         return;
       }
     
@@ -38,19 +47,23 @@ export class LoginComponent {
       this.authService.login(payload).subscribe({
         next: (response) => {
           if (response.status_code === 200 && response.data?.otp_sent) {
+            this.loading = false;
             console.log('Verification needed');
           } 
           else if (response.status_code === 200 && response.data?.access_token && response.data?.refresh_token) {
             console.log('Access and refresh token set accordingly');
             console.log('Access Token:', response.data.access_token);
             console.log('Refresh Token:', response.data.refresh_token);
-
+            this.loading = false;
+            this.toaster.add({ severity: 'success', summary: 'Success', detail: 'Login successful' });
             this.router.navigate(['/projects']);
           }
         },
         error: (error) => {
-          console.error('Login failed:', error);
-          console.log('Invalid credentials');
+          this.loading = false;
+          this.toaster.add({ severity: 'error', summary: 'Error', detail: error.error.message });
+          // console.error('Login failed:', error);
+          console.log('Invalid credentials',error);
         }
       });
     }
