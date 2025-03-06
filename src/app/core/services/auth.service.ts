@@ -13,11 +13,11 @@ export class AuthService {
 
   isSessionActive(): string | null {
     const token = localStorage.getItem('accesstoken');
-    
+
     if (token) {
       return token;
     }
-    
+
     return null;
   }
 
@@ -33,6 +33,10 @@ export class AuthService {
 
   login(userData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/auth/login/`, userData);
+  }
+
+  verifyOtp(data:any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/auth/verify-otp/`, data);
   }
 
 }

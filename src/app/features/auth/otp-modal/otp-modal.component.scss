@@ -1,0 +1,92 @@
+
+.otp-input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 24px;
+  background: #e9edff;
+  color: #3754DB;
+  border: 1px solid #e9edff;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+.otp-input:focus {
+  outline: none;
+}
+.submit-btn {
+  background-color: #3754DB;
+  color: white;
+  font-size: 18px;
+  border-radius: 25px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+}
+.timer {
+  color: #3754DB;
+}
+
+@media (max-width: 992px) {
+
+  .otp-input {
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+  }
+}
+
+@media (max-width: 769px) {
+
+  .otp-input {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      margin: 0 3px;
+  }
+
+  .modal-title {
+      font-size: 18px;
+  }
+
+}
+
+@media (max-width: 579px) {
+
+  .otp-input {
+      width: 35px;
+      height: 35px;
+      font-size: 16px;
+      margin: 0 2px;
+  }
+
+  .submit-btn {
+      font-size: 16px;
+      padding: 8px;
+  }
+
+}
+
+@media (max-width: 479px) {
+
+  .otp-input {
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
+      margin: 0 2px;
+  }
+
+  .modal-title {
+      font-size: 16px;
+  }
+
+  .submit-btn {
+      font-size: 14px;
+      padding: 6px;
+  }
+
+  .modal-body p {
+      font-size: 12px;
+  }
+}
+
+

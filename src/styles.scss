@@ -1,3 +1,11 @@
 @use 'bootstrap/scss/bootstrap';
 @use 'assets/scss/common/fonts';
 @use 'assets/scss/common/icon_cdn';
+
+
+@use 'assets/scss/common/common_modal.scss';
+
+
+.p-toast {
+  z-index:  1060 !important; /* Higher z-index than bootstrap modals */
+}
