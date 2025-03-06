@@ -6,6 +6,9 @@ import { confirmPasswordValidator } from '../../../shared/validators/common_vali
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from '../../../core/services/auth.service';
 import { MessageService } from 'primeng/api';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { OtpModalComponent } from '../otp-modal/otp-modal.component';
+
 
 @Component({
   selector: 'app-signup',
@@ -24,7 +27,9 @@ export class SignupComponent {
     private fb: FormBuilder,
     private authService: AuthService,
     private spinner: NgxSpinnerService,
-    private toaster: MessageService
+    private toaster: MessageService,
+    private modalService: NgbModal,
+    public activeModal: NgbActiveModal
     ) {
     this.registerForm = this.fb.group({
       first_name: ['', [Validators.required, Validators.minLength(2)]],
@@ -56,6 +61,12 @@ export class SignupComponent {
           this.loading = false;
           this.toaster.add({ severity: 'success', summary: 'Success', detail: response.message });
           console.log('Login successful:', response);
+          if(response.data.otp_sent){
+            const modalRef = this.modalService.open(OtpModalComponent, {
+              backdrop: 'static',
+            });
+            modalRef.componentInstance.email = response.data.email;
+          }
         }
       },
       error: (error) => {

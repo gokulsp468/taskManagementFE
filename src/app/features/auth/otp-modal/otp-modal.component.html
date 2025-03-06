@@ -1,0 +1,22 @@
+
+
+ <div class="modal-header border-0">
+      <h5 class="modal-title w-100">Verification</h5>
+  </div>
+  <button type="button" class="close"  aria-label="Close" (click)="close()"><img src="assets/img/close.svg"></button>
+  <div class="modal-body">
+      <div class="d-flex justify-content-center mb-4">
+        <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otpArray[0]" (input)="handleInput($event, 0)">
+        <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otpArray[1]" (input)="handleInput($event, 1)">
+        <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otpArray[2]" (input)="handleInput($event, 2)">
+        <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otpArray[3]" (input)="handleInput($event, 3)">
+        <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otpArray[4]" (input)="handleInput($event, 4)">
+      </div>
+      <button class="submit-btn" (click)="onSubmit()" [disabled]="loading">
+        <span *ngIf="loading" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+          {{ loading ? 'Loading...' : 'Submit' }}
+      </button>
+      <p class="mt-3">Not received your code? <span class="timer">4:54</span></p>
+      <a href="#" class="text-light">Back to login</a>
+  </div>
+  <p-toast/>
