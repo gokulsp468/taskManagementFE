@@ -60,7 +60,7 @@ export class SignupComponent {
       },
       error: (error) => {
         this.loading = false;
-        this.toaster.add({ severity: 'error', summary: 'Error', detail: error.error.message });
+        this.toaster.add({ severity: 'error', summary: 'Error', detail: error.error.message?error.error.message:'Oops Something went wrong .Try later' });
         console.error('Login failed:', error);
       }
     });
