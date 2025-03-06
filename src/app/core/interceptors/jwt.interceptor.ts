@@ -25,11 +25,11 @@ export const jwtInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>, nex
     catchError((err: HttpErrorResponse) => {
       // const rememberMe = localStorage.getItem('rememberMe');
 
-      // if (err.status === 401 && rememberMe !== '1') {
-      //   authService.logout();
-      //   router.navigate(['/signin']);
-      //   return throwError(() => err);
-      // }
+      if (err.status === 401 ) {
+        authService.logout();
+        router.navigate(['/signin']);
+        return throwError(() => err);
+      }
 
       
       if (err.status === 401 && !isTokenRefreshRequest) {
