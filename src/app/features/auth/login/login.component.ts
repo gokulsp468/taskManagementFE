@@ -54,6 +54,8 @@ export class LoginComponent {
             console.log('Access and refresh token set accordingly');
             console.log('Access Token:', response.data.access_token);
             console.log('Refresh Token:', response.data.refresh_token);
+            localStorage.setItem('accessToken', response.data.access_token);
+            localStorage.setItem('refreshToken', response.data.refresh_token);
             this.loading = false;
             this.toaster.add({ severity: 'success', summary: 'Success', detail: 'Login successful' });
             this.router.navigate(['/projects']);
@@ -61,11 +63,16 @@ export class LoginComponent {
         },
         error: (error) => {
           this.loading = false;
-          this.toaster.add({ severity: 'error', summary: 'Error', detail: error.error.message });
+          this.toaster.add({ severity: 'error', summary: 'Error', detail: error.error.message?error.error.message:'Oops Something went wrong .Try later' });
           // console.error('Login failed:', error);
           console.log('Invalid credentials',error);
         }
       });
     }
     
+    togglePassword(field: string) {
+      if (field === 'password') {
+        this.showPassword = !this.showPassword;
+      }
+    }
 }

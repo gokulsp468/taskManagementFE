@@ -24,20 +24,28 @@
             </div>
             <div class="mb-4 password-wrapper">
                 <label for="password" class="form-label">Password<small class="text-danger" > * </small></label>
-                <input type="password" formControlName="password" class="form-control" id="password" placeholder="Enter your account password" required autocomplete="new-password">
+                <input [type]="showPassword ? 'text' : 'password'" formControlName="password" class="form-control" id="password" placeholder="Enter your account password" required autocomplete="new-password">
+                <img *ngIf="showPassword" src="assets/img/eye.svg" class="toggle-password" width="20" (click)="togglePassword('password')">
+                <img *ngIf="!showPassword" src="assets/img/hide.png" class="toggle-password" width="20"(click)="togglePassword('password')">
+    
                 <small class="text-danger small m-0" *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">
                     Password is required
                   </small>
                   <small class="text-danger small m-0" *ngIf="loginForm.get('password')?.errors?.['minlength'] && loginForm.get('password')?.touched">
                     Password must be at least 8 characters long
                   </small>
-                <img src="assets/img/eye.svg" class="toggle-password" width="20">
+                  
+                <!-- <img src="assets/img/eye.svg" class="toggle-password" width="20"> -->
                 <!-- <small>Enter your account password</small> -->
                 <div class="forgot-password">
                     <a [routerLink]="['/auth/forgot-password']" class="links links-primary no-underline">Forgot Password?</a>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Login</button>
+            <!-- <button type="submit" class="btn btn-primary w-100">Login</button> -->
+            <button type="submit" class="btn btn-primary w-100 mt-4" [disabled]="loading">
+                <span *ngIf="loading" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                {{ loading ? 'Loading...' : 'Login' }}
+              </button>
         </form>
         <div class="signup-action-footer text-center mt-3">
             <p class="login-txt">Don't have an account? 
