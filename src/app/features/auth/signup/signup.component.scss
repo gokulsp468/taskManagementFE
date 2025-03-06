@@ -100,7 +100,14 @@ img {
 .password-wrapper .toggle-password {
   position: absolute;
   right: 10px;
-  top: 45%;
+  top: 52%;
+  cursor: pointer;
+}
+
+.password-wrapper .confirm-password {
+  position: absolute;
+  right: 10px;
+  top: 52%;
   cursor: pointer;
 }
 .btn-primary {

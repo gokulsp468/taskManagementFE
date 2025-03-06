@@ -39,35 +39,38 @@
             </small>
           </div>
 
-          <div class="mb-4 password-wrapper">
+          <div class="mb-1 password-wrapper">
              <label for="password" class="form-label">Enter A Password</label>
              <input [type]="showPassword ? 'text' : 'password'"  formControlName="password" class="form-control" id="password" placeholder="password" >
-             <button type="button" class="btn btn-outline-secondary" (click)="togglePassword('password')">
-              <img *ngIf="showPassword" src="assets/img/eye.svg" class="toggle-password" width="20">
-              <img *ngIf="!showPassword" src="assets/img/hide.png" class="toggle-password" width="20">
-            </button>
-             <small class="text-danger small m-0" *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched">
-              * Password is required
-            </small>
-            <small class="text-danger small m-0" *ngIf="registerForm.get('password')?.errors?.['minlength'] && registerForm.get('password')?.touched">
-              * Password must be at least 8 characters long
-            </small>
-            <small class="text-danger small m-0" *ngIf="registerForm.get('password')?.errors?.['pattern'] && registerForm.get('password')?.touched">
-              * Password must contain an uppercase letter, a number, and a special character
-            </small>
+
+              <img *ngIf="showPassword" src="assets/img/eye.svg" class="toggle-password" width="20" (click)="togglePassword('password')">
+              <img *ngIf="!showPassword" src="assets/img/hide.png" class="toggle-password" width="20"(click)="togglePassword('password')">
+
           </div>
-          <div class="mb-3 password-wrapper">
+
+          <small class="text-danger small m-0" *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched">
+            * Password is required
+          </small>
+          <small class="text-danger small m-0 d-block" *ngIf="registerForm.get('password')?.errors?.['minlength'] && registerForm.get('password')?.touched">
+            * Password must be at least 8 characters long
+          </small>
+          <small class="text-danger small m-0" *ngIf="registerForm.get('password')?.errors?.['pattern'] && registerForm.get('password')?.touched">
+            * Password must contain an uppercase letter, a number, and a special character
+          </small>
+
+          <div class="mb-1 password-wrapper">
             <label for="password" class="form-label">Confirm Password</label>
             <input [type]="showConfirmPassword ? 'text' : 'password'"  class="form-control" formControlName="confirmPassword" id="confirmPassword" placeholder="confirmPassword" >
-            <button type="button" class="btn btn-outline-secondary" (click)="togglePassword('confirmPassword')">
-              <img *ngIf="showConfirmPassword" src="assets/img/eye.svg" class="toggle-password" width="20">
-              <img *ngIf="!showConfirmPassword" src="assets/img/hide.png" class="toggle-password" width="20">
-            </button>
-            <small class="text-danger small m-0" *ngIf="registerForm.errors?.['passwordsMismatch'] && registerForm.touched">
-              * Passwords do not match
-            </small>
+
+              <img *ngIf="showConfirmPassword" src="assets/img/eye.svg" class="confirm-password" width="20" (click)="togglePassword('confirmPassword')">
+              <img *ngIf="!showConfirmPassword" src="assets/img/hide.png" class="confirm-password" width="20" (click)="togglePassword('confirmPassword')">
+
+
          </div>
-         <button type="submit" class="btn btn-primary w-100 " [disabled]="loading">
+         <small class="text-danger small m-0" *ngIf="registerForm.errors?.['passwordsMismatch'] && registerForm.touched">
+          * Passwords do not match
+        </small>
+         <button type="submit" class="btn btn-primary w-100 mt-4" [disabled]="loading">
           <span *ngIf="loading" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
           {{ loading ? 'Loading...' : 'Create Account' }}
         </button>
