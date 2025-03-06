@@ -244,3 +244,10 @@
   text-align: right;
   margin-top: 5px; /* Adjust spacing */
 }
+
+.password-wrapper .toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 37%;
+  cursor: pointer;
+}
