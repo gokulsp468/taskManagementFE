@@ -49,23 +49,23 @@ img {
   font-size: 18px;
   line-height: 66px;
 }
-.content {
+.login-content {
   width: 385px;
   margin: auto;
 }
 
-.content h2 {
+.login-content h2 {
   font-weight: 400;
   font-size: 32px;
   line-height: 48px;
   margin-bottom: 0;
 }
-.content span {
+.login-content span {
   font-weight: 700;
   font-size: 32px;
   line-height: 48px;
 }
-.content p {
+.login-content p {
   font-size: 16px;
   color: #62667E;
   font-weight: 400;
@@ -83,7 +83,7 @@ img {
   padding: 10px;
 }
 
-.content small {
+.login-content small {
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
@@ -151,7 +151,7 @@ img {
 
 @media (max-width: 1200px) {
 
-  .content h2, .content span {
+  .login-content h2, .login-content span {
       font-size: 30px;
       line-height: 30px;
   }
@@ -176,7 +176,7 @@ img {
   .login-image p {
       font-size: 14px;
   }
-  .content h2, .content span {
+  .login-content h2, .login-content span {
       font-size: 28px;
       line-height: 38px;
   }
@@ -216,7 +216,7 @@ img {
       font-size: 32px;
       line-height: 42px;
   }
-  .content h2, .content span {
+  .login-content h2, .login-content span {
       font-size: 24px;
       line-height: 34px;
   }
@@ -240,7 +240,7 @@ img {
       padding: 15px;
   }
 
-  .content p {
+  .login-content p {
       font-size: 14px;
       margin-bottom: 1.5rem;
   }
