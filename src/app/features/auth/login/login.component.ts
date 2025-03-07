@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { MessageService } from 'primeng/api';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { OtpModalComponent } from '../otp-modal/otp-modal.component';
+import { emailValidator } from '../../../shared/validators/common_validators';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +30,7 @@ export class LoginComponent {
       public activeModal: NgbActiveModal
     ) {
       this.loginForm = this.fb.group({
-        email: ['', [Validators.required, Validators.email]],
+        email: ['', [Validators.required, Validators.email, emailValidator]],
         password: ['', [
           Validators.required,
           Validators.minLength(8),

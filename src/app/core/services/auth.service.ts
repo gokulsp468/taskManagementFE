@@ -39,4 +39,13 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/auth/verify-otp/`, data);
   }
 
+  forgotPassword(email: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/auth/forgot-password/`, email);
+  }
+
+  verifyResetOtp(data:any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/auth/verify-reset-password-otp/`, data);
+  }
+
+
 }
