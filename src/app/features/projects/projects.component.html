@@ -12,471 +12,59 @@
           </div>
       </div>
       <hr>
-      <div class="board-container d-flex">
-          <div class="column">
-              <div class="d-flex mb-3 column-head">
-              <h5>Backlog Tasks</h5>
-              <span class="badge badge-warning badge-heading">5</span>
-              <a href="#" class="ms-auto"><img src="assets/img/dots.svg"></a>
-              </div>
-              <div class="task-card viewtask_btn">
-                  <div class="task-header">
-                      <p class="task-title">Product Design, Figma, Sketch <br> (Software), Prototype</p>
+      <div cdkDropListOrientation="horizontal"  cdkDropList [cdkDropListData]="columns"  class="board-container d-flex" (cdkDropListDropped)="drop($event)">
+        <div class="column" *ngFor="let column of columns" cdkDrag>
 
-                      <div class="top-right-icon">
-                          <img src="assets/img/Vector 01.svg"><span>4</span>
-                      </div>
-                  </div>
-
-                  <div class="d-flex gap-2 pb-4">
-                      <span class="badge badge-light badge-custom">#UI007</span>
-                      <span class="badge badge-primary badge-custom">Design</span>
-                      <span class="badge badge-warning badge-custom">Backlog</span>
-                  </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="avatar-group">
-                          <img src="assets/img/Avatar.png" class="avatar">
-                          <img src="assets/img/Avatar-1.png" class="avatar">
-                          <a href="#" class="text-decoration-none"><div class="extra-avatars">+5</div></a>
-                          <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
-                      </div>
-
-                      <div class="d-flex align-items-center gap-3">
-                          <div class="icon-text text-purple">
-                              <img src="assets/img/Vector 02.svg"><span>2</span>
-                          </div>
-                          <div class="icon-text text-warning">
-                              <img src="assets/img/Vector 03.svg"><span>3</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="task-card viewtask_btn">
-                  <div class="task-header">
-                      <p class="task-title">Product Design, Figma, Sketch <br> (Software), Prototype</p>
-                      <div class="top-right-icon">
-                          <img src="assets/img/task.svg"><span class="text-muted">4</span>
-                      </div>
-                  </div>
-
-                  <div class="d-flex gap-2 pb-4">
-                      <span class="badge badge-light badge-custom">#UI007</span>
-                      <span class="badge badge-info badge-custom">Development</span>
-                      <span class="badge badge-warning badge-custom">Backlog</span>
-                  </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="avatar-group">
-                          <img src="assets/img/Avatar.png" class="avatar">
-                          <a href="#" class="text-decoration-none"><div class="extra-avatars">+5</div></a>
-                          <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
-                      </div>
-
-                      <div class="d-flex align-items-center gap-3">
-                          <div class="icon-text text-purple">
-                              <img src="assets/img/file.svg"><span class="text-muted">2</span>
-                          </div>
-                          <div class="icon-text text-warning">
-                              <img src="assets/img/message.svg"><span class="text-muted">3</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="task-card viewtask_btn">
-                  <div class="task-header">
-                      <p class="task-title">Product Design, Figma, Sketch <br> (Software), Prototype</p>
-
-                      <div class="top-right-icon">
-                          <img src="assets/img/task.svg"><span class="text-muted">4</span>
-                      </div>
-                  </div>
-
-                  <div class="d-flex gap-2 pb-4">
-                      <span class="badge badge-light badge-custom">#UI007</span>
-                      <span class="badge badge-primary badge-custom">Design</span>
-                      <span class="badge badge-warning badge-custom">Backlog</span>
-                  </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="avatar-group">
-                          <img src="assets/img/Avatar.png" class="avatar">
-                          <img src="assets/img/Avatar-1.png" class="avatar">
-                          <a href="#" class="text-decoration-none"><div class="extra-avatars">+5</div></a>
-                          <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
-                      </div>
-
-                      <div class="d-flex align-items-center gap-3">
-                          <div class="icon-text text-purple">
-                              <img src="assets/img/file.svg"><span class="text-muted">2</span>
-                          </div>
-                          <div class="icon-text text-warning">
-                              <img src="assets/img/message.svg"><span class="text-muted">3</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="task-card viewtask_btn">
-                  <div class="task-header">
-                      <p class="task-title">Add authentication pages</p>
-
-                      <div class="top-right-icon">
-                          <img src="assets/img/Vector 01.svg"><span>4</span>
-                      </div>
-                  </div>
-
-                  <div class="d-flex gap-2 pb-4">
-                      <span class="badge badge-light badge-custom">#UI007</span>
-                      <span class="badge badge-primary badge-custom">Design</span>
-                      <span class="badge badge-warning badge-custom">Backlog</span>
-                  </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="avatar-group">
-                          <img src="assets/img/Avatar.png" class="avatar">
-                          <img src="assets/img/Avatar-1.png" class="avatar">
-                          <a href="#" class="text-decoration-none"><div class="extra-avatars">+5</div></a>
-                          <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
-                      </div>
-
-                      <div class="d-flex align-items-center gap-3">
-                          <div class="icon-text text-purple">
-                              <img src="assets/img/file.svg"><span class="text-muted">2</span>
-                          </div>
-                          <div class="icon-text text-warning">
-                              <img src="assets/img/message.svg"><span class="text-muted">3</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="add">
-                  <a href="#" data-bs-toggle="modal" data-bs-target="#newModal"><img src="assets/img/add-1.svg" class="img-fluid"></a>
-              </div>
+          <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+          <div class="d-flex mb-3 column-head align-items-center" >
+            <img src="assets/img/six-dots.png"  style="width: 30px; cursor: pointer;" alt="drag handle" cdkDragHandle>
+            <h5 class="mt-2">{{ column.name }}</h5>
+            <span class="badge badge-warning badge-heading">{{ column.tasks.length }}</span>
+            <a href="#" class="ms-auto"><img src="assets/img/dots.svg"></a>
           </div>
 
-          <div class="column">
-              <div class="d-flex mb-3 column-head">
-                  <h5>To Do Tasks</h5>
-                  <span class="badge badge-info badge-heading">5</span>
-                  <a href="#" class="ms-auto"><img src="assets/img/dots.svg"></a>
-              </div>
-              <div class="task-card viewtask_btn">
-                  <div class="task-header">
-                      <p class="task-title">Add authentication pages</p>
-
-                      <div class="top-right-icon">
-                          <img src="assets/img/task.svg"><span class="text-muted">4</span>
-                      </div>
-                  </div>
-
-                  <div class="d-flex gap-2 pb-4">
-                      <span class="badge badge-light badge-custom">#UI007</span>
-                      <span class="badge badge-primary badge-custom">Design</span>
-                      <span class="badge badge-warning badge-custom">Backlog</span>
-                  </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="avatar-group">
-                          <img src="assets/img/Avatar.png" class="avatar">
-                          <img src="assets/img/Avatar-1.png" class="avatar">
-                          <a href="#" class="text-decoration-none"><div class="extra-avatars">+5</div></a>
-                          <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
-                      </div>
-
-                      <div class="d-flex align-items-center gap-3">
-                          <div class="icon-text text-purple">
-                              <img src="assets/img/file.svg"><span class="text-muted">2</span>
-                          </div>
-                          <div class="icon-text text-warning">
-                              <img src="assets/img/message.svg"><span class="text-muted">3</span>
-                          </div>
-                      </div>
-                  </div>
+          <div cdkDropList [cdkDropListData]="column.tasks" class="task-list" >
+            <div class="task-card viewtask_btn" *ngFor="let task of column.tasks" cdkDrag>
+              <div class="task-header">
+                <p class="task-title">{{ task.title }}</p>
+                <div class="top-right-icon">
+                  <img src="assets/img/Vector 01.svg"><span>{{ task.comments }}</span>
+                </div>
               </div>
 
-              <div class="task-card viewtask_btn">
-                  <div class="task-header">
-                      <p class="task-title">Product Design, Figma, Sketch <br> (Software), Prototype</p>
-                      <div class="top-right-icon">
-                          <img src="assets/img/task.svg"><span class="text-muted">4</span>
-                      </div>
-                  </div>
-
-                  <div class="d-flex gap-2 pb-4">
-                      <span class="badge badge-light badge-custom">#UI007</span>
-                      <span class="badge badge-info badge-custom">Development</span>
-                      <span class="badge badge-warning badge-custom">Backlog</span>
-                  </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="avatar-group">
-                          <img src="assets/img/Avatar.png" class="avatar">
-                          <a href="#" class="text-decoration-none"><div class="extra-avatars">+5</div></a>
-                          <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
-                      </div>
-
-                      <div class="d-flex align-items-center gap-3">
-                          <div class="icon-text text-purple">
-                              <img src="assets/img/file.svg"><span class="text-muted">2</span>
-                          </div>
-                          <div class="icon-text text-warning">
-                              <img src="assets/img/message.svg"><span class="text-muted">3</span>
-                          </div>
-                      </div>
-                  </div>
+              <div class="d-flex gap-2 pb-4">
+                <span class="badge badge-light badge-custom">#UI007</span>
+                <span class="badge badge-primary badge-custom">{{ task.priority }}</span>
               </div>
 
-              <div class="task-card viewtask_btn">
-                  <div class="task-header">
-                      <p class="task-title">Add authentication pages</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="avatar-group">
+                  <img src="assets/img/Avatar.png" class="avatar">
+                  <img src="assets/img/Avatar-1.png" class="avatar">
+                  <a href="#" class="text-decoration-none"><div class="extra-avatars">+{{ task.members }}</div></a>
+                  <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
+                </div>
 
-                      <div class="top-right-icon">
-                          <img src="assets/img/task.svg"><span class="text-muted">4</span>
-                      </div>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="icon-text text-purple">
+                    <img src="assets/img/Vector 02.svg"><span>2</span>
                   </div>
-
-                  <div class="d-flex gap-2 pb-4">
-                      <span class="badge badge-light badge-custom">#UI007</span>
-                      <span class="badge badge-primary badge-custom">Design</span>
-                      <span class="badge badge-warning badge-custom">Backlog</span>
+                  <div class="icon-text text-warning">
+                    <img src="assets/img/Vector 03.svg"><span>3</span>
                   </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="avatar-group">
-                          <img src="assets/img/Avatar.png" class="avatar">
-                          <img src="assets/img/Avatar-1.png" class="avatar">
-                          <a href="#" class="text-decoration-none"><div class="extra-avatars">+5</div></a>
-                          <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
-                      </div>
-
-                      <div class="d-flex align-items-center gap-3">
-                          <div class="icon-text text-purple">
-                              <img src="assets/img/file.svg"><span class="text-muted">2</span>
-                          </div>
-                          <div class="icon-text text-warning">
-                              <img src="assets/img/message.svg"><span class="text-muted">3</span>
-                          </div>
-                      </div>
-                  </div>
+                </div>
               </div>
-              <div class="add">
-                  <a href="#" data-bs-toggle="modal" data-bs-target="#newModal"><img src="assets/img/add-1.svg" class="img-fluid"></a>
-              </div>
+            </div>
           </div>
+          <div class="add">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#newModal"><img src="assets/img/add-1.svg" class="img-fluid"></a>
+        </div>
 
-          <div class="column">
-              <div class="d-flex mb-3 column-head">
-                  <h5>In Process</h5>
-                  <span class="badge badge-secondary badge-heading">5</span>
-                  <a href="#" class="ms-auto"><img src="assets/img/dots.svg"></a>
-              </div>
-              <div class="task-card viewtask_btn">
-                  <div class="task-header">
-                      <p class="task-title">Product Design, Figma, Sketch <br> (Software), Prototype</p>
-                      <div class="top-right-icon">
-                          <img src="assets/img/Vector 01.svg"><span>4</span>
-                      </div>
-                  </div>
+        </div>
 
-                  <div class="d-flex gap-2 pb-4">
-                      <span class="badge badge-light badge-custom">#UI007</span>
-                      <span class="badge badge-primary badge-custom">Design</span>
-                      <span class="badge badge-warning badge-custom">Backlog</span>
-                  </div>
 
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="avatar-group">
-                          <img src="assets/img/Avatar.png" class="avatar">
-                          <img src="assets/img/Avatar-1.png" class="avatar">
-                          <a href="#" class="text-decoration-none"><div class="extra-avatars">+5</div></a>
-                          <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
-                      </div>
 
-                      <div class="d-flex align-items-center gap-3">
-                          <div class="icon-text text-purple">
-                              <img src="assets/img/file.svg"><span class="text-muted">2</span>
-                          </div>
-                          <div class="icon-text text-warning">
-                              <img src="assets/img/message.svg"><span class="text-muted">3</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="task-card viewtask_btn">
-                  <div class="task-header">
-                      <p class="task-title">Create calendar, chat and email <br> app pages</p>
-                      <div class="top-right-icon">
-                          <img src="assets/img/Vector 01.svg"><span>4</span>
-                      </div>
-                  </div>
 
-                  <div class="d-flex gap-2 pb-4">
-                      <span class="badge badge-light badge-custom">#UI007</span>
-                      <span class="badge badge-secondary badge-custom">Inprocess</span>
-                      <span class="badge badge-warning badge-custom">Backlog</span>
-                  </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="avatar-group">
-                          <img src="assets/img/Avatar.png" class="avatar">
-                          <a href="#" class="text-decoration-none"><div class="extra-avatars">+5</div></a>
-                          <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
-                      </div>
-
-                      <div class="d-flex align-items-center gap-3">
-                          <div class="icon-text text-purple">
-                              <img src="assets/img/Vector 02.svg"><span>2</span>
-                          </div>
-                          <div class="icon-text text-warning">
-                              <img src="assets/img/Vector 03.svg"><span>3</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="task-card viewtask_btn">
-                  <div class="task-header">
-                      <p class="task-title">Product Design, Figma, Sketch <br> (Software), Prototype</p>
-                      <div class="top-right-icon">
-                          <img src="assets/img/task.svg"><span class="text-muted">4</span>
-                      </div>
-                  </div>
-
-                  <div class="d-flex gap-2 pb-4">
-                      <span class="badge badge-light badge-custom">#UI007</span>
-                      <span class="badge badge-primary badge-custom">Design</span>
-                      <span class="badge badge-warning badge-custom">Backlog</span>
-                  </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="avatar-group">
-                          <img src="assets/img/Avatar.png" class="avatar">
-                          <img src="assets/img/Avatar-1.png" class="avatar">
-                          <a href="#" class="text-decoration-none"><div class="extra-avatars">+5</div></a>
-                          <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
-                      </div>
-
-                      <div class="d-flex align-items-center gap-3">
-                          <div class="icon-text text-purple">
-                              <img src="assets/img/file.svg"><span class="text-muted">2</span>
-                          </div>
-                          <div class="icon-text text-warning">
-                              <img src="assets/img/message.svg"><span class="text-muted">3</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="task-card viewtask_btn">
-                  <div class="task-header">
-                      <p class="task-title">Product Design, Figma, Sketch <br> (Software), Prototype</p>
-                      <div class="top-right-icon">
-                          <img src="assets/img/Vector 01.svg"><span>4</span>
-                      </div>
-                  </div>
-
-                  <div class="d-flex gap-2 pb-4">
-                      <span class="badge badge-light badge-custom">#UI007</span>
-                      <span class="badge badge-primary badge-custom">Design</span>
-                      <span class="badge badge-warning badge-custom">Backlog</span>
-                  </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="avatar-group">
-                          <img src="assets/img/Avatar.png" class="avatar">
-                          <img src="assets/img/Avatar-1.png" class="avatar">
-                          <a href="#" class="text-decoration-none"><div class="extra-avatars">+5</div></a>
-                          <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
-                      </div>
-
-                      <div class="d-flex align-items-center gap-3">
-                          <div class="icon-text text-purple">
-                              <img src="assets/img/file.svg"><span class="text-muted">2</span>
-                          </div>
-                          <div class="icon-text text-warning">
-                              <img src="assets/img/message.svg"><span class="text-muted">3</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="add">
-                  <a href="#" data-bs-toggle="modal" data-bs-target="#newModal"><img src="assets/img/add-1.svg" class="img-fluid"></a>
-              </div>
-          </div>
-          <div class="column">
-              <div class="d-flex mb-3 column-head">
-                  <h5>Done</h5>
-                  <span class="badge badge-success badge-heading">5</span>
-                  <a href="#" class="ms-auto"><img src="assets/img/dots.svg"></a>
-              </div>
-              <div class="task-card viewtask_btn">
-                  <div class="task-header">
-                      <p class="task-title">Product Design, Figma, Sketch <br> (Software), Prototype</p>
-                      <div class="top-right-icon">
-                          <img src="assets/img/task.svg"><span class="text-muted">4</span>
-                      </div>
-                  </div>
-
-                  <div class="d-flex gap-2 pb-4">
-                      <span class="badge badge-light badge-custom">#UI007</span>
-                      <span class="badge badge-success badge-custom">Done</span>
-
-                  </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="avatar-group">
-                          <img src="assets/img/Avatar.png" class="avatar">
-                          <img src="assets/img/Avatar-1.png" class="avatar">
-                          <a href="#" class="text-decoration-none"><div class="extra-avatars">+5</div></a>
-                          <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
-                      </div>
-
-                      <div class="d-flex align-items-center gap-3">
-                          <div class="icon-text text-purple">
-                              <img src="assets/img/Vector 02.svg"><span>2</span>
-                          </div>
-                          <div class="icon-text text-warning">
-                              <img src="assets/img/Vector 03.svg"><span>3</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="task-card viewtask_btn">
-                  <div class="task-header">
-                      <p class="task-title">Product Design, Figma, Sketch <br> (Software), Prototype</p>
-                      <div class="top-right-icon">
-                          <img src="assets/img/task.svg"><span class="text-muted">4</span>
-                      </div>
-                  </div>
-
-                  <div class="d-flex gap-2 pb-4">
-                      <span class="badge badge-light badge-custom">#UI007</span>
-                      <span class="badge badge-success badge-custom">Done</span>
-
-                  </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="avatar-group">
-                          <img src="assets/img/Avatar.png" class="avatar">
-                          <a href="#" class="text-decoration-none"><div class="extra-avatars">+5</div></a>
-                          <a href="#" class="ms-2"><img src="assets/img/add.svg"></a>
-                      </div>
-
-                      <div class="d-flex align-items-center gap-3">
-                          <div class="icon-text text-purple">
-                              <img src="assets/img/file.svg"><span class="text-muted">2</span>
-                          </div>
-                          <div class="icon-text text-warning">
-                              <img src="assets/img/message.svg"><span class="text-muted">3</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="add">
-                  <a href="#" data-bs-toggle="modal" data-bs-target="#newModal"><img src="assets/img/add-1.svg" class="img-fluid"></a>
-              </div>
-          </div>
       </div>
   </main>
 
