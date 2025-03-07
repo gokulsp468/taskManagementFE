@@ -8,8 +8,8 @@ export const authPagesGuard: CanActivateFn = (route, state) => {
   const isAuthenticated = !!localStorage.getItem('accessToken');
 
   if (isAuthenticated) {
-    console.log('User is already logged in, redirecting to /projects');
-    router.navigate(['/projects']); // Redirect logged-in users
+    console.log('User is already logged in, redirecting to /dashboard');
+    router.navigate(['/']); // Redirect logged-in users
     return false; // Block access to login/register
   }
 
