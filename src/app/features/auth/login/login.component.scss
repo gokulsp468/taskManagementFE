@@ -49,47 +49,47 @@
     font-size: 18px;
     line-height: 66px;
   }
-  .content {
+  .content-login {
     width: 385px;
     margin: auto;
   }
-  
-  .content h2 {
+
+  .content-login h2 {
     font-weight: 400;
     font-size: 32px;
     line-height: 48px;
     margin-bottom: 0;
   }
-  .content span {
+  .content-login span {
     font-weight: 700;
     font-size: 32px;
     line-height: 48px;
   }
-  .content p {
+  .content-login p {
     font-size: 16px;
     color: #62667E;
     font-weight: 400;
     line-height: 24px;
     margin-bottom: 2rem;
   }
-  
+
   .form-label {
     color: #2C2E3A;
   }
-  
+
   .form-control {
     border-radius: 12px;
     border-color: #2746D8;
     padding: 10px;
   }
-  
-  .content small {
+
+  .content-login small {
     font-size: 12px;
     font-weight: 400;
     line-height: 18px;
     color: #6E7391;
   }
-  
+
   .password-wrapper {
     position: relative;
   }
@@ -109,13 +109,13 @@
     border-radius: 12px;
     font-size: 1rem;
   }
-  
+
   .btn-primary:hover {
     background-color: #0b30d1;
   }
-  
+
   @media (max-width: 1679px) {
-  
+
     .login-image h2 {
         font-weight: 500;
         font-size: 45px;
@@ -127,36 +127,36 @@
         font-size: 15px;
         line-height: 66px;
     }
-  
+
   }
-  
+
   @media (max-width: 1400px) {
-  
+
     .login-image h2 {
         font-size: 40px;
         padding: 50px;
     }
   }
-  
+
   @media (max-width: 1200px) {
-  
-    .content h2, .content span {
+
+    .content-login h2, .content-login span {
         font-size: 30px;
         line-height: 30px;
     }
-  
+
     .login-image h2 {
         padding: 65px;
         font-size: 34px;
     }
-  
+
     .login-image {
         width: 100%;
     }
   }
-  
+
   @media (max-width: 992px) {
-  
+
     .login-image h2 {
         padding: 30px;
         font-size: 30px;
@@ -165,11 +165,11 @@
     .login-image p {
         font-size: 14px;
     }
-    .content h2, .content span {
+    .content-login h2, .content-login span {
         font-size: 28px;
         line-height: 38px;
     }
-  
+
     .password-wrapper .toggle-password {
         position: absolute;
         right: 10px;
@@ -177,15 +177,15 @@
         cursor: pointer;
     }
   }
-  
+
   @media (max-width: 769px) {
-  
+
     .login-image h2 {
         padding: 30px;
         font-size: 36px;
         line-height: 46px;
     }
-    .content {
+    .content-login {
         width: 100%;
         margin: auto;
         padding-inline: 20px;
@@ -193,25 +193,25 @@
     .btn-primary {
         padding: 12px 40px;
     }
-  
+
   }
-  
+
   @media (max-width: 579px) {
     .login-image h2 {
         padding: 20px;
         font-size: 32px;
         line-height: 42px;
     }
-    .content h2, .content span {
+    .content-login h2, .content-login span {
         font-size: 24px;
         line-height: 34px;
     }
     .form-control {
         padding: 8px;
     }
-  
+
   }
-  
+
   @media (max-width: 479px) {
     .login-image {
         min-height: 250px;
@@ -222,8 +222,8 @@
         line-height: 38px;
         padding: 15px;
     }
-  
-    .content p {
+
+    .content-login p {
         font-size: 14px;
         margin-bottom: 1.5rem;
     }
@@ -231,7 +231,7 @@
         padding: 10px 30px;
     }
   }
-  
+
 .no-underline {
     text-decoration: none;  /* Removes underline */
     cursor: pointer;        /* Changes cursor to pointer */
