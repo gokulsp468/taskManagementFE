@@ -39,4 +39,8 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/auth/verify-otp/`, data);
   }
 
+  resentOtp(data:any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/auth/login/resend-otp/`, data);
+  }
+
 }
