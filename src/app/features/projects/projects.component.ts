@@ -44,23 +44,22 @@ export class ProjectsComponent {
   ];
 
 
-  dropTask(event: CdkDragDrop<string[]>) {
+  dropTask(event: CdkDragDrop<any[]>) {
     if (event.previousContainer === event.container) {
+      console.log(event.container.data);
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
+      console.log(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
         event.previousIndex,
-        event.currentIndex
+        event.currentIndex,
       );
     }
   }
 
-  drop(event: CdkDragDrop<any[]>) {
-    moveItemInArray(this.columns, event.previousIndex, event.currentIndex);
-  }
-  // Function to handle column reordering
+
   dropColumn(event: CdkDragDrop<any[]>) {
     moveItemInArray(this.columns, event.previousIndex, event.currentIndex);
   }

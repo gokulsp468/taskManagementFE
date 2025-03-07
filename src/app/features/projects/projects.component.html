@@ -12,7 +12,7 @@
           </div>
       </div>
       <hr>
-      <div cdkDropListOrientation="horizontal"  cdkDropList [cdkDropListData]="columns"  class="board-container d-flex" (cdkDropListDropped)="drop($event)">
+      <div cdkDropListOrientation="horizontal"  cdkDropList CdkDropListGroup  [cdkDropListData]="columns"  class="board-container d-flex" (cdkDropListDropped)="dropColumn($event)">
         <div class="column" *ngFor="let column of columns" cdkDrag>
 
           <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
@@ -23,7 +23,13 @@
             <a href="#" class="ms-auto"><img src="assets/img/dots.svg"></a>
           </div>
 
-          <div cdkDropList [cdkDropListData]="column.tasks" class="task-list" >
+          <div
+          cdkDropList
+          [cdkDropListData]="column.tasks"
+        
+          class="task-list"
+          (cdkDropListDropped)="dropTask($event)"
+          >
             <div class="task-card viewtask_btn" *ngFor="let task of column.tasks" cdkDrag>
               <div class="task-header">
                 <p class="task-title">{{ task.title }}</p>
