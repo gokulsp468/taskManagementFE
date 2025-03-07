@@ -33,7 +33,7 @@ export class SignupComponent {
     ) {
     this.registerForm = this.fb.group({
       first_name: ['', [Validators.required, Validators.minLength(2)]],
-      last_name: ['', [Validators.required, Validators.minLength(2)]],
+      last_name: ['', [Validators.required, Validators.minLength(1)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [
         Validators.required,
@@ -89,6 +89,21 @@ export class SignupComponent {
     }
   }
 
+  preventCopyPaste(event: ClipboardEvent, action: string) {
+    event.preventDefault(); // Prevent copy or paste
+  
+    let message = '';
+    if (action === 'paste') {
+      message = 'Pasting password is not allowed for security reasons!';
+
+     } 
+    // else if (action === 'copy') {
+    //   message = 'Copying password is not allowed for security reasons!';
+    // }
+  
+    // Show a warning toaster
+    this.toaster.add({ severity: 'warn', summary: 'Warning', detail: message });
+  }
   }
 
 

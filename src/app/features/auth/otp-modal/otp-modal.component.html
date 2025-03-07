@@ -9,6 +9,8 @@
         <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otpArray[2]" (input)="handleInput($event, 2)">
         <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otpArray[3]" (input)="handleInput($event, 3)">
         <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otpArray[4]" (input)="handleInput($event, 4)">
+        <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otpArray[5]" (input)="handleInput($event, 5)">
+
       </div>
       <button class="submit-btn" (click)="onSubmit()" [disabled]="loading">
         <span *ngIf="loading" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
