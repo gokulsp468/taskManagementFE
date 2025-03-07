@@ -30,7 +30,7 @@
 
           <div class="mb-4">
              <label for="email" class="form-label">Email Address</label>
-             <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email" >
+             <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email" autocomplete="off">
              <small class="text-danger small m-0" *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.touched">
               * Email is required
             </small>
@@ -41,7 +41,7 @@
 
           <div class="mb-1 password-wrapper">
              <label for="password" class="form-label">Enter A Password</label>
-             <input [type]="showPassword ? 'text' : 'password'"  formControlName="password" class="form-control" id="password" placeholder="password" >
+             <input [type]="showPassword ? 'text' : 'password'"  formControlName="password" class="form-control" id="password" placeholder="Enter Password" autocomplete="new-password"Z>
 
               <img *ngIf="showPassword" src="assets/img/eye.svg" class="toggle-password" width="20" (click)="togglePassword('password')">
               <img *ngIf="!showPassword" src="assets/img/hide.png" class="toggle-password" width="20"(click)="togglePassword('password')">
@@ -60,7 +60,7 @@
 
           <div class="mb-1 password-wrapper">
             <label for="password" class="form-label">Confirm Password</label>
-            <input [type]="showConfirmPassword ? 'text' : 'password'"  class="form-control" formControlName="confirmPassword" id="confirmPassword" placeholder="confirmPassword" >
+            <input [type]="showConfirmPassword ? 'text' : 'password'"  class="form-control" formControlName="confirmPassword" id="confirmPassword" placeholder="Confirm Password" >
 
               <img *ngIf="showConfirmPassword" src="assets/img/eye.svg" class="confirm-password" width="20" (click)="togglePassword('confirmPassword')">
               <img *ngIf="!showConfirmPassword" src="assets/img/hide.png" class="confirm-password" width="20" (click)="togglePassword('confirmPassword')">
