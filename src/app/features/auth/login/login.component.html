@@ -16,11 +16,13 @@
                 <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter Email Address" required autocomplete="off">
                 <!-- <small>Example: examplegmail.com</small> -->
                 <small class="text-danger small m-0" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']">
-                    Email is required
+                    Email is required.
                   </small>
-                  <small class="text-danger small m-0" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email']">
-                    Invalid email
-                  </small>
+                  <small class="text-danger small m-0" 
+                    *ngIf="loginForm.get('email')?.touched && 
+                            (loginForm.get('email')?.errors?.['email'] || loginForm.get('email')?.errors?.['commonEmail'])">
+                Invalid email.
+              </small>
             </div>
             <div class="mb-4 password-wrapper">
                 <label for="password" class="form-label">Password<small class="text-danger" > * </small></label>
@@ -29,10 +31,10 @@
                 <img *ngIf="!showPassword" src="assets/img/hide.png" class="toggle-password" width="20"(click)="togglePassword('password')">
 
                 <small class="text-danger small m-0" *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">
-                    Password is required
+                    Password is required.
                   </small>
                   <small class="text-danger small m-0" *ngIf="loginForm.get('password')?.errors?.['minlength'] && loginForm.get('password')?.touched">
-                    Password must be at least 8 characters long
+                    Password must be at least 8 characters long.
                   </small>
 
                 <!-- <img src="assets/img/eye.svg" class="toggle-password" width="20"> -->
