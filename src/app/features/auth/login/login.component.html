@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="col-md-7 d-flex flex-column justify-content-center">
-        <div class="content">
+        <div class="content-login">
             <h2>Login to Your<span> Account</span></h2>
             <p>Enter your credentials to access your account</p>
         <form [formGroup]="loginForm" method="post" (ngSubmit)="onSubmit()">
@@ -29,14 +29,14 @@
                 <input [type]="showPassword ? 'text' : 'password'" formControlName="password" class="form-control" id="password" placeholder="Enter your account password" required autocomplete="new-password">
                 <img *ngIf="showPassword" src="assets/img/eye.svg" class="toggle-password" width="20" (click)="togglePassword('password')">
                 <img *ngIf="!showPassword" src="assets/img/hide.png" class="toggle-password" width="20"(click)="togglePassword('password')">
-    
+
                 <small class="text-danger small m-0" *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">
                     Password is required.
                   </small>
                   <small class="text-danger small m-0" *ngIf="loginForm.get('password')?.errors?.['minlength'] && loginForm.get('password')?.touched">
                     Password must be at least 8 characters long.
                   </small>
-                  
+
                 <!-- <img src="assets/img/eye.svg" class="toggle-password" width="20"> -->
                 <!-- <small>Enter your account password</small> -->
                 <div class="forgot-password">
@@ -50,13 +50,12 @@
               </button>
         </form>
         <div class="signup-action-footer text-center mt-3">
-            <p class="login-txt">Don't have an account? 
+            <p class="login-txt">Don't have an account?
                 <a [routerLink]="['/auth/signup']" class="links links-primary no-underline">Sign Up</a>
             </p>
         </div>
-               
+
         </div>
     </div>
     </div>
   </div>
-  

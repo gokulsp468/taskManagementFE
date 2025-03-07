@@ -1,36 +1,56 @@
 <header>
-    <nav class="navbar navbar-expand-md">
-        <div class="container-fluid">
-            <a class="navbar-brand">
-                <img src="../../../../assets/img/Frame.png" class="img-fluid">
-                <div class="toggle">
-                    <button id="sidebarToggle"><img src="../../../../assets/img/toggle.svg"></button>
-                </div>
-            </a>
-            <div class="d-flex align-items-center order-md-last">
-                <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span><img src="../../../../assets/img/search.svg"></span>
-                </button>
-                <div class="profile">
-                    <a><img src="../../../../assets/img/notification.svg" class="img-fluid"></a>
-                    <div class="profile-container">
-                        <div class="profile-ring"></div>
-                        <a data-bs-toggle="modal" data-bs-target="#profileModal"><img
-                                src="../../../../assets/img/Ellipse.png" class="profile-image"></a>
-                        <div class="notification-badge">2</div>
-                        <div class="inner-dot"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <form class="d-flex search-form">
-                    <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search for item here..."
-                            aria-label="Search">
-                        <a><img src="../../../../assets/img/search.svg" class="img-fluid"></a>
-                    </div>
-                </form>
-            </div>
+  <nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+      <a class="navbar-brand">
+        <img src="../../../../assets/img/Frame.png" class="img-fluid" />
+        <div class="toggle">
+          <button id="sidebarToggle" (click)="this.toggleSidebar()">
+            <img src="../../../../assets/img/toggle.svg" />
+          </button>
         </div>
-    </nav>
+      </a>
+      <div class="d-flex align-items-center order-md-last">
+        <button
+          class="navbar-toggler me-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span><img src="../../../../assets/img/search.svg" /></span>
+        </button>
+        <div class="profile">
+          <a
+            ><img
+              src="../../../../assets/img/notification.svg"
+              class="img-fluid"
+          /></a>
+          <div class="profile-container">
+            <div class="profile-ring"></div>
+            <a data-bs-toggle="modal" data-bs-target="#profileModal"
+              ><img
+                src="../../../../assets/img/Ellipse.png"
+                class="profile-image"
+            /></a>
+            <div class="notification-badge">2</div>
+            <div class="inner-dot"></div>
+          </div>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="d-flex search-form">
+          <div class="search-container">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search for item here..."
+              aria-label="Search"
+            />
+            <a
+              ><img src="../../../../assets/img/search.svg" class="img-fluid"
+            /></a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
 </header>

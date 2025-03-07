@@ -47,6 +47,9 @@ export class SignupComponent {
   onSubmit() {
     this.loading = true;
     if (this.registerForm.invalid) {
+      const modalRef = this.modalService.open(OtpModalComponent, {
+        backdrop: 'static',
+      });
       this.registerForm.markAllAsTouched();
       this.loading = false;
       return;

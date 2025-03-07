@@ -59,9 +59,9 @@ export class LoginComponent {
           modalRef.componentInstance.email = response.data.email;
           }
           else if (response.status_code === 200 && response.data?.access_token && response.data?.refresh_token) {
-            console.log('Access and refresh token set accordingly');
-            console.log('Access Token:', response.data.access_token);
-            console.log('Refresh Token:', response.data.refresh_token);
+            // console.log('Access and refresh token set accordingly');
+            // console.log('Access Token:', response.data.access_token);
+            // console.log('Refresh Token:', response.data.refresh_token);
             localStorage.setItem('accessToken', response.data.access_token);
             localStorage.setItem('refreshToken', response.data.refresh_token);
             this.loading = false;
