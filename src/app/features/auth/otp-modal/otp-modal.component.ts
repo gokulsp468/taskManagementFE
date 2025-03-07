@@ -39,12 +39,12 @@ export class OtpModalComponent implements OnInit {
   }
 
 
-  otpArray: string[] = ['', '', '', '', ''];
+  otpArray: string[] = ['', '', '', '', '', ''];
   onSubmit() {
     const otp = this.otpArray.join(''); // Combine OTP digits into a string
     console.log('Entered OTP:', otp);
 
-    if (otp.length === 5) {
+    if (otp.length === 6) {
       this.loading = true;
       const data = {
         email: this.email,
@@ -69,8 +69,8 @@ export class OtpModalComponent implements OnInit {
       })
 
     } else {
-      console.log('Please enter a valid 5-digit OTP');
-      this.toaster.add({ severity: 'info', summary: 'Info', detail: 'Please enter a valid 5-digit OTP' });
+      console.log('Please enter a valid 6-digit OTP');
+      this.toaster.add({ severity: 'info', summary: 'Info', detail: 'Please enter a valid 6-digit OTP' });
 
     }
   }
