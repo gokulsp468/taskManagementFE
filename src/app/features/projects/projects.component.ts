@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import {
   CdkDragDrop,
   moveItemInArray,
@@ -20,6 +20,7 @@ import {
 })
 export class ProjectsComponent {
 
+  constructor(private cdr: ChangeDetectorRef) { }
 
   columns = [
     {
@@ -42,22 +43,38 @@ export class ProjectsComponent {
       ]
     }
   ];
-
+  fireworks = false;
 
   dropTask(event: CdkDragDrop<any[]>) {
+    if (!event.isPointerOverContainer) {
+      console.log("Drop ignored: Not over a valid container");
+      return;
+    }
+
     if (event.previousContainer === event.container) {
-      console.log(event.container.data);
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      console.log(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
         event.previousIndex,
-        event.currentIndex,
+        event.currentIndex
       );
     }
+
+    console.log("Updated columns:", this.columns);
+
+    // 🔹 Manually trigger change detection
+    this.cdr.detectChanges();
   }
+
+
+
+
+  get connectedDropLists(): string[] {
+    return this.columns.map(c => `task-list-${c.name}`);
+  }
+
 
 
   dropColumn(event: CdkDragDrop<any[]>) {
