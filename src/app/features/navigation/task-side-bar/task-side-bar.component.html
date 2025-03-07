@@ -1,10 +1,46 @@
-<div class="sidebar collapsed">
-    <ul class="sidebar-menu">
-        <li><a class="active"><img src="../../../../assets/img/icon-1.svg"><span>User Authentication</span></a></li>
-        <li><a><img src="../../../../assets/img/icon-2.svg"><span>Task & Project...</span></a></li>
-        <li><a><img src="../../../../assets/img/icon-3.svg"><span>Board View</span></a></li>
-        <li><a><img src="../../../../assets/img/icon-4.svg"><span>Notifications Collaboration</span></a></li>
-        <li><a><img src="../../../../assets/img/icon-5.svg"><span>Reporting & Analytics</span></a></li>
-        <li><a><img src="../../../../assets/img/icon-6.svg"><span>Advanced Features</span></a></li>
-    </ul>
+<div class="sidebar" [class.collapsed]="isSidebarCollapsed()">
+  <ul class="sidebar-menu">
+    <li>
+      <a [class.active]="isMenuActive('')" routerLink=""
+        ><img src="../../../../assets/img/icon-1.svg" /><span
+          >Dashboard</span
+        ></a
+      >
+    </li>
+    <li>
+      <a [class.active]="isMenuActive('projects')" routerLink="/projects"
+        ><img src="../../../../assets/img/icon-2.svg" /><span
+          >Task & Project...</span
+        ></a
+      >
+    </li>
+    <!-- <li>
+      <a [class.active]="isMenuActive('board')"
+        ><img src="../../../../assets/img/icon-3.svg" /><span
+          >Board View</span
+        ></a
+      >
+    </li> -->
+    <!-- <li>
+      <a [class.active]="isMenuActive('notification-collaboration')"
+        ><img src="../../../../assets/img/icon-4.svg" /><span
+          >Notifications Collaboration</span
+        ></a
+      >
+    </li> -->
+    <li>
+      <a [class.active]="isMenuActive('reports')" routerLink="/reports"
+        ><img src="../../../../assets/img/icon-5.svg" /><span
+          >Reporting & Analytics</span
+        ></a
+      >
+    </li>
+    <li>
+      <a [class.active]="isMenuActive('advanced')" routerLink="/advanced"
+        ><img src="../../../../assets/img/icon-6.svg" /><span
+          >Advanced Features</span
+        ></a
+      >
+    </li>
+  </ul>
 </div>

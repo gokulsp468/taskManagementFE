@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
+import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+  // { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
   {
     path: 'auth',
     loadChildren: () =>
@@ -13,5 +14,9 @@ export const routes: Routes = [
       import('./features/dashboard/dashboard.routes').then(
         (m) => m.dashboardRoutes
       ),
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   },
 ];
