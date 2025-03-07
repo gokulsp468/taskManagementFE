@@ -4,6 +4,8 @@ import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 import { CommonModule } from '@angular/common';
 import { MessageService } from 'primeng/api';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { OtpModalComponent } from '../otp-modal/otp-modal.component';
 
 @Component({
   selector: 'app-login',
@@ -19,10 +21,12 @@ export class LoginComponent {
   loading:boolean = false;
 
     constructor(
-      private fb: FormBuilder, 
-      private authService: AuthService, 
-      private router: Router, 
-      private toaster: MessageService
+      private fb: FormBuilder,
+      private authService: AuthService,
+      private router: Router,
+      private toaster: MessageService,
+      private modalService: NgbModal,
+      public activeModal: NgbActiveModal
     ) {
       this.loginForm = this.fb.group({
         email: ['', [Validators.required, Validators.email]],
@@ -32,7 +36,7 @@ export class LoginComponent {
         ]],
       });
     }
-  
+
     onSubmit() {
       this.loading = true;
       if (this.loginForm.invalid) {
@@ -40,16 +44,19 @@ export class LoginComponent {
         this.loading = false;
         return;
       }
-    
+
       const payload = this.loginForm.value;
       console.log('Logging user:', payload);
-    
+
       this.authService.login(payload).subscribe({
         next: (response) => {
           if (response.status_code === 200 && response.data?.otp_sent) {
             this.loading = false;
-            console.log('Verification needed');
-          } 
+            const modalRef = this.modalService.open(OtpModalComponent, {
+            backdrop: 'static',
+          });
+          modalRef.componentInstance.email = response.data.email;
+          }
           else if (response.status_code === 200 && response.data?.access_token && response.data?.refresh_token) {
             console.log('Access and refresh token set accordingly');
             console.log('Access Token:', response.data.access_token);
@@ -69,7 +76,7 @@ export class LoginComponent {
         }
       });
     }
-    
+
     togglePassword(field: string) {
       if (field === 'password') {
         this.showPassword = !this.showPassword;

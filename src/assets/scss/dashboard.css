@@ -565,43 +565,6 @@ hr {
   width: 100%;
 }
 
-.modal-dialog {
-  max-width: 712px;
-  margin: 1.75rem auto;
-  position: relative;
-}
-
-.modal-content {
-  border-radius: 28px;
-  padding: 0;
-}
-.modal-dialog .close {
-  position: absolute;
-  right: 15px;
-  top: 12px;
-  border: none;
-  background-color: #fff;
-}
-.modal-header {
-  border-bottom: 0;
-  padding-bottom: 12px !important;
-  padding: 30px;
-}
-.modal-body {
-  padding-bottom: 0;
-  padding: 0;
-}
-
-.modal-body .p-4 {
-  padding: 30px !important;
-  padding-bottom: 5px !important;
-}
-
-.modal-title {
-  font-size: 20px;
-  font-weight: 600;
-  font-family: "Inter", serif;
-}
 
 .nav-tabs .nav-link {
   color: #1f2633;
@@ -678,24 +641,6 @@ textarea.form-control {
   flex: 1;
 }
 
-.modal-footer {
-  border-top: none;
-  padding-top: 0;
-}
-
-.modal-footer .btn-primary {
-  background-color: #3754db;
-  border-color: #3754db;
-  color: #fff;
-  border-radius: 5px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 50px;
-  padding-right: 50px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 39px;
-}
 
 textarea {
   resize: none;
@@ -748,29 +693,12 @@ textarea {
   color: #1f2633;
 }
 
-.new .modal-footer {
-  border-top: var(--bs-modal-footer-border-width) solid
-    var(--bs-modal-footer-border-color);
-  padding: 15px;
-}
+
 
 .new .save-btn {
   justify-content: flex-end;
 }
 
-.new .modal-footer .btn-primary {
-  background-color: #3754db;
-  border-color: #3754db;
-  color: #fff;
-  border-radius: 5px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 30px;
-  padding-right: 30px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 39px;
-}
 
 .new-btn {
   background-color: #f3f3f3;
@@ -999,25 +927,6 @@ textarea {
     right: 5px;
   }
 
-  .modal-dialog {
-    max-width: 90%;
-  }
-
-  .modal-content {
-    border-radius: 20px;
-  }
-
-  .modal-header {
-    padding: 20px;
-  }
-
-  .modal-body .p-4 {
-    padding: 20px !important;
-  }
-
-  .modal-title {
-    font-size: 18px;
-  }
 
   .nav-tabs .nav-link {
     padding-inline: 20px;
@@ -1138,23 +1047,7 @@ textarea {
     right: 4px;
   }
 
-  .modal-dialog {
-    max-width: 95%;
-    margin: 1rem auto;
-    padding: 10px;
-  }
 
-  .modal-content {
-    border-radius: 16px;
-  }
-
-  .modal-header {
-    padding: 15px;
-  }
-
-  .modal-body .p-4 {
-    padding: 15px !important;
-  }
 
   .nav-tabs {
     flex-wrap: nowrap;
@@ -1205,11 +1098,7 @@ textarea {
     margin: 15px;
   }
 
-  .new .modal-footer .btn-primary {
-    padding: 0 20px;
-    font-size: 14px;
-    line-height: 35px;
-  }
+
 }
 
 @media (max-width: 579px) {
@@ -1286,11 +1175,7 @@ textarea {
     margin: 10px;
   }
 
-  .new .modal-footer .btn-primary {
-    padding: 0 15px;
-    font-size: 12px;
-    line-height: 32px;
-  }
+
 }
 
 @media (max-width: 479px) {
@@ -1364,26 +1249,7 @@ textarea {
     border-width: 2px;
   }
 
-  .modal-dialog {
-    margin: 0.5rem auto;
-    padding: 8px;
-  }
 
-  .modal-content {
-    border-radius: 12px;
-  }
-
-  .modal-header {
-    padding: 12px;
-  }
-
-  .modal-body .p-4 {
-    padding: 12px !important;
-  }
-
-  .modal-title {
-    font-size: 16px;
-  }
 
   .nav-tabs .nav-link {
     font-size: 9px;
@@ -1429,11 +1295,7 @@ textarea {
     margin-bottom: 12px;
   }
 
-  .modal-footer .btn-primary {
-    padding: 8px 30px;
-    font-size: 14px;
-    line-height: 18px;
-  }
+
 
   .new .nav-tabs .nav-link {
     padding-inline: 10px;
@@ -1467,9 +1329,5 @@ textarea {
     margin: 8px;
   }
 
-  .new .modal-footer .btn-primary {
-    padding: 0 12px;
-    font-size: 11px;
-    line-height: 30px;
-  }
+  
 }
