@@ -41,7 +41,7 @@
 
           <div class="mb-1 password-wrapper">
              <label for="password" class="form-label">Enter A Password</label>
-             <input [type]="showPassword ? 'text' : 'password'"  formControlName="password" class="form-control" id="password" placeholder="Enter Password" autocomplete="new-password"Z>
+             <input [type]="showPassword ? 'text' : 'password'"  formControlName="password" class="form-control" id="password" placeholder="Enter Password" autocomplete="new-password" (paste)="preventCopyPaste($event, 'paste')">
 
               <img *ngIf="showPassword" src="assets/img/eye.svg" class="toggle-password" width="20" (click)="togglePassword('password')">
               <img *ngIf="!showPassword" src="assets/img/hide.png" class="toggle-password" width="20"(click)="togglePassword('password')">
@@ -60,7 +60,7 @@
 
           <div class="mb-1 password-wrapper">
             <label for="password" class="form-label">Confirm Password</label>
-            <input [type]="showConfirmPassword ? 'text' : 'password'"  class="form-control" formControlName="confirmPassword" id="confirmPassword" placeholder="Confirm Password" >
+            <input [type]="showConfirmPassword ? 'text' : 'password'"  class="form-control" formControlName="confirmPassword" id="confirmPassword" placeholder="Confirm Password" (paste)="preventCopyPaste($event, 'paste')">
 
               <img *ngIf="showConfirmPassword" src="assets/img/eye.svg" class="confirm-password" width="20" (click)="togglePassword('confirmPassword')">
               <img *ngIf="!showConfirmPassword" src="assets/img/hide.png" class="confirm-password" width="20" (click)="togglePassword('confirmPassword')">
