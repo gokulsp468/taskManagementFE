@@ -7,7 +7,7 @@ import { AuthService } from '../services/auth.service';
 import { environment } from '../../../environments/environment';
 
 export const jwtInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>, next: HttpHandlerFn): Observable<any> => {
-  
+
   const http = inject(HttpClient);
   const authService = inject(AuthService);
   const router = inject(Router);
@@ -31,7 +31,7 @@ export const jwtInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>, nex
         return throwError(() => err);
       }
 
-      
+
       if (err.status === 401 && !isTokenRefreshRequest) {
         // Attempt to refresh token
         return http.post(`${environment.apiHost}/auth/refresh-token/`, {}, {
@@ -41,7 +41,7 @@ export const jwtInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>, nex
           switchMap((res: any) => {
             // Save new token
             accessToken = res.data.access_tokenz;
-            localStorage.setItem('accesstoken', accessToken);
+            localStorage.setItem('accessToken', accessToken);
 
             // Retry the original request with the new token
             return next(req.clone({ setHeaders: { Authorization: `Bearer ${accessToken}` } }));
