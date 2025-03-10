@@ -43,7 +43,7 @@ export class ProjectsComponent {
       ]
     }
   ];
-  fireworks = false;
+  
 
   dropTask(event: CdkDragDrop<any[]>) {
     if (!event.isPointerOverContainer) {
