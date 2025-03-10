@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   isSessionActive(): string | null {
-    const token = localStorage.getItem('accesstoken');
+    const token = localStorage.getItem('accessToken');
 
     if (token) {
       return token;
@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem('accesstoken');
+    localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');
     // localStorage.removeItem('rememberMe');
   }
